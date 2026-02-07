@@ -25,16 +25,30 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        body {
+        /* Correção para o fundo ficar 100% fixo (inclusive no celular) */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             background-image: url('fundo.jpg');
             background-size: cover;
             background-position: center;
-            background-attachment: fixed;
+            z-index: -1; /* Joga a imagem para trás de tudo */
+        }
+
+        body {
+            /* Removi o background daqui para usar a técnica acima */
+            margin: 0;
         }
 
         .container {
             background: rgba(10, 10, 10, 0.85);
             min-height: 100vh;
+            /* Garante que o conteúdo fique sobre a imagem */
+            position: relative; 
         }
 
         /* Avatar com Neon */
