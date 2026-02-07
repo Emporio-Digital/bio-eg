@@ -1,0 +1,270 @@
+/* 1. VARIÁVEIS E CORES */
+:root {
+    --bg-color: #050505;
+    --text-primary: #ffffff;
+    --text-secondary: #a1a1aa;
+    
+    /* GRADIENTE: Azul Ciano -> Roxo Elétrico */
+    --primary-gradient: linear-gradient(135deg, #00c6ff 0%, #bd00ff 100%);
+    --neon-glow: rgba(189, 0, 255, 0.4); 
+    
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --container-width: 500px;
+    --border-radius: 18px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Outfit', sans-serif; }
+
+/* Scrollbar Personalizada */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--bg-color); }
+::-webkit-scrollbar-thumb { background: #333; border-radius: 3px; }
+
+/* FIX DE ROLAGEM E FUNDO PRETO NO MOBILE */
+html {
+    background-color: var(--bg-color);
+    overscroll-behavior-y: none;
+}
+
+body {
+    background-color: transparent;
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    overflow-x: hidden; 
+    position: relative;
+}
+
+/* 2. FUNDO ANIMADO */
+.background-animation {
+    position: fixed;
+    top: 0; left: 0; width: 100%; height: 100%;
+    z-index: -1;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center;
+    pointer-events: none;
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(90px);
+    opacity: 0.4;
+    animation: pulse-glow 8s infinite alternate;
+}
+
+.shape-1 { top: -5%; width: 350px; height: 350px; background: #00c6ff; opacity: 0.3; }
+.shape-2 { top: 40%; width: 400px; height: 400px; background: #bd00ff; opacity: 0.2; animation-delay: 2s; }
+.shape-3 { bottom: -10%; width: 300px; height: 300px; background: #5e17eb; opacity: 0.3; }
+
+@keyframes pulse-glow {
+    0% { transform: scale(1); opacity: 0.3; }
+    100% { transform: scale(1.2); opacity: 0.5; }
+}
+
+/* 3. ESTRUTURA PRINCIPAL */
+.container {
+    width: 100%; max-width: var(--container-width);
+    padding: 3rem 1.5rem;
+    display: flex; flex-direction: column; gap: 2rem;
+    z-index: 1;
+}
+
+/* 4. PERFIL & HEADER */
+.profile-section { text-align: center; }
+
+/* LOGO GRANDE (135px) */
+.avatar-container {
+    width: 135px; height: 135px; margin: 0 auto 1.2rem;
+    padding: 3px;
+    background: var(--primary-gradient);
+    border-radius: 50%;
+    box-shadow: 0 0 25px var(--neon-glow);
+}
+
+.avatar {
+    width: 100%; height: 100%; border-radius: 50%;
+    object-fit: cover; border: 3px solid var(--bg-color);
+}
+
+h1 { 
+    font-family: 'Orbitron', sans-serif;
+    font-size: 1.8rem; 
+    font-weight: 800; 
+    letter-spacing: 0.5px;
+    margin-bottom: 0.5rem;
+}
+
+.role { 
+    font-size: 0.85rem; font-weight: 700; letter-spacing: 2px;
+    color: #00c6ff; 
+    text-transform: uppercase;
+    text-shadow: 0 0 10px rgba(0, 198, 255, 0.5);
+    margin-bottom: 1.5rem;
+}
+
+.social-icons-header {
+    display: flex; justify-content: center; gap: 1.2rem; margin-bottom: 1rem;
+}
+
+.social-icons-header a {
+    color: var(--text-secondary); font-size: 1.8rem; transition: 0.3s;
+    display: flex; align-items: center;
+}
+
+.social-icons-header a:hover {
+    color: #00c6ff; transform: scale(1.15); filter: drop-shadow(0 0 5px #00c6ff);
+}
+
+/* 5. CARDS */
+.links-section { display: flex; flex-direction: column; gap: 1rem; }
+
+.card {
+    display: flex; align-items: center; 
+    gap: 1rem;     
+    padding: 1.5rem; 
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--border-radius);
+    text-decoration: none; color: white;
+    transition: transform 0.2s ease, background 0.2s ease;
+    cursor: pointer; position: relative; overflow: hidden;
+    backdrop-filter: blur(10px);
+    width: 100%; text-align: left; font-size: inherit;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.card:active { transform: scale(0.98); }
+
+.card:hover {
+    background: rgba(255, 255, 255, 0.08);
+    border-color: #bd00ff; 
+    box-shadow: 0 5px 20px rgba(189, 0, 255, 0.2);
+}
+
+/* --- ALINHAMENTO --- */
+.card-icon, .card-icon-img {
+    width: 80px;  /* Largura fixa igual para todos */
+    height: 60px; /* Altura fixa */
+    display: flex; align-items: center; justify-content: center;
+    flex-shrink: 0;
+}
+
+/* Ícones Phosphor */
+.card-icon {
+    font-size: 2.2rem; 
+    color: #00c6ff; 
+}
+
+/* Imagens Normais */
+.card-icon-img img {
+    width: 100%; height: 100%; object-fit: contain; border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+/* CLASSE NOVA: MEGA (Aumenta muito o logo - 1.8x) */
+/* Mantive a classe .large antiga e adicionei a .mega para seus logos */
+.card-icon-img.large img {
+    transform: scale(1.3); 
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
+}
+
+.card-icon-img.mega img {
+    transform: scale(1.8); 
+    filter: drop-shadow(0 0 5px rgba(0,0,0,0.5));
+}
+
+.card-content { flex: 1; }
+
+.card-content h3 { 
+    font-size: 1.1rem; 
+    font-weight: 600; 
+    margin-bottom: 3px; 
+}
+
+.card-content p { font-size: 0.85rem; color: var(--text-secondary); }
+
+.card-arrow { color: #bd00ff; opacity: 0.7; font-size: 1.2rem; }
+
+.badge {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--text-secondary);
+    font-size: 0.65rem; padding: 4px 8px;
+    border-radius: 4px; text-transform: uppercase; font-weight: 700;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.disabled-card { cursor: default; opacity: 0.7; }
+.disabled-card:hover { transform: none; box-shadow: none; border-color: var(--card-border); }
+
+/* 6. MODAL (Mantido completo para preservar estilos originais) */
+.modal-overlay {
+    position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.85); 
+    backdrop-filter: blur(5px);
+    display: flex; justify-content: center; align-items: center;
+    z-index: 999;
+    opacity: 0; visibility: hidden;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active { opacity: 1; visibility: visible; }
+
+.modal-content {
+    background: #0a0a0a;
+    border: 1px solid #bd00ff; 
+    width: 90%; max-width: 380px;
+    padding: 2rem; border-radius: 24px;
+    position: relative;
+    transform: translateY(20px);
+    transition: transform 0.3s ease;
+    box-shadow: 0 0 30px rgba(189, 0, 255, 0.2);
+}
+
+.modal-overlay.active .modal-content { transform: translateY(0); }
+
+.close-btn {
+    position: absolute; top: 1rem; right: 1rem;
+    background: none; border: none; color: var(--text-secondary);
+    font-size: 1.5rem; cursor: pointer; padding: 10px;
+}
+
+.modal-content h2 { color: #ffffff; margin-bottom: 0.5rem; font-size: 1.4rem; }
+.modal-subtitle { color: var(--text-secondary); font-size: 0.9rem; margin-bottom: 1.5rem; }
+
+.ebook-list { display: flex; flex-direction: column; gap: 0.8rem; }
+
+.ebook-item {
+    display: flex; align-items: center; gap: 1rem;
+    padding: 1rem; background: var(--card-bg);
+    border-radius: 12px; text-decoration: none; color: white;
+    transition: 0.2s; border: 1px solid transparent;
+}
+.ebook-item:active { transform: scale(0.98); }
+.ebook-item:hover { 
+    background: rgba(189, 0, 255, 0.1); 
+    border-color: #bd00ff;
+}
+
+.ebook-icon { font-size: 1.6rem; color: #00c6ff; display: flex; align-items: center; }
+
+.ebook-info { display: flex; flex-direction: column; }
+.ebook-title { font-weight: 600; font-size: 0.95rem; color: #fff; }
+.ebook-desc { font-size: 0.75rem; color: var(--text-secondary); margin-top: 2px; }
+
+/* 7. FOOTER */
+footer { margin-top: auto; text-align: center; padding-bottom: 1rem;}
+footer p { font-size: 0.8rem; color: var(--text-secondary); opacity: 0.5; }
+
+/* Animações */
+.fade-in { opacity: 0; transform: translateY(20px); transition: 0.6s ease; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+.delay-1 { transition-delay: 0.1s; }
+.delay-2 { transition-delay: 0.2s; }
+.delay-3 { transition-delay: 0.3s; }
+.delay-4 { transition-delay: 0.4s; }

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>EG Empório Digital</title>
+    
+    <!-- Ícone da Aba (Favicon) - Forçando tipo JPEG -->
+    <link rel="shortcut icon" href="perfil.jpg" type="image/jpeg">
+
+    <!-- SEO -->
+    <meta property="og:title" content="EG Empório Digital">
+    <meta property="og:description" content="Soluções Digitais e Produtos Exclusivos.">
+    
+    <!-- FONTES -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Ícones -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        body {
+            background-image: url('fundo.jpg');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+
+        .container {
+            background: rgba(10, 10, 10, 0.85);
+            min-height: 100vh;
+        }
+
+        /* Avatar com Neon */
+        .avatar {
+            filter: contrast(1.15) brightness(1.1); 
+            border: 2px solid #00f3ff; 
+            box-shadow: 0 0 20px rgba(0, 243, 255, 0.5);
+            image-rendering: -webkit-optimize-contrast;
+            position: relative;
+            z-index: 10;
+        }
+
+        /* Neon Azul nos Cards */
+        .card {
+            border: 1px solid #00f3ff !important; 
+            box-shadow: 0 0 15px rgba(0, 243, 255, 0.3) !important; 
+        }
+
+        .card:hover {
+            box-shadow: 0 0 25px rgba(0, 243, 255, 0.6) !important;
+        }
+
+        /* Seta branca */
+        .card-arrow {
+            color: #ffffff !important;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Fundo Animado -->
+    <div class="background-animation">
+        <div class="shape shape-1"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+    </div>
+
+    <main class="container">
+        
+        <!-- HEADER -->
+        <header class="profile-section fade-in">
+            <div class="avatar-container">
+                <img src="perfil.jpg" alt="Foto de Perfil" class="avatar">
+            </div>
+            
+            <h1>EG Empório Digital</h1>
+            <!-- Removi a frase 'Link na Bio' conforme solicitado -->
+
+            <div class="social-icons-header">
+                <a href="https://wa.me/5511916053292?text=Ol%C3%A1!%20Vim%20pelo%20seu%20link%20da%20bio." target="_blank">
+                    <i class="ph ph-whatsapp-logo"></i>
+                </a>
+
+                <a href="https://instagram.com/eg.emporio.digital" target="_blank">
+                    <i class="ph ph-instagram-logo"></i>
+                </a>
+            </div>
+        </header>
+
+        <!-- SEÇÃO DE LINKS -->
+        <section class="links-section">
+            
+            <!-- CARD 1: SITE OFICIAL -->
+            <a href="https://egemporiodigital.com.br/" class="card fade-in delay-1" target="_blank">
+                <!-- Adicionei a classe "mega" para aumentar o logo -->
+                <div class="card-icon-img mega">
+                    <img src="logo-site.png" alt="Logo Site">
+                </div>
+                <div class="card-content">
+                    <h3>EG Empório Digital</h3>
+                    <p>Soluções Digitais & Tecnologia</p>
+                </div>
+                <div class="card-arrow"><i class="ph ph-caret-right"></i></div>
+            </a>
+
+            <!-- CARD 2: JOIAS -->
+            <a href="https://joias.egemporiodigital.com.br/" class="card fade-in delay-2" target="_blank">
+                <!-- Adicionei a classe "mega" para aumentar o logo -->
+                <div class="card-icon-img mega">
+                    <img src="logo-joias.png" alt="Logo Joias">
+                </div>
+                <div class="card-content">
+                    <h3>EG Empório Joias</h3>
+                    <p>Ouro 18k, Prata 925 e Ródio Branco</p>
+                </div>
+                <div class="card-arrow"><i class="ph ph-caret-right"></i></div>
+            </a>
+
+            <!-- CARD 3: KAIRÓS -->
+            <a href="https://kairos.egemporiodigital.com.br/" class="card fade-in delay-3" target="_blank">
+                <!-- Mantive a classe "mega" aqui também para padronizar o tamanho -->
+                <div class="card-icon-img mega">
+                    <img src="logo-kairos.png" alt="Logo Kairós">
+                </div>
+                <div class="card-content">
+                    <h3>Kairós</h3>
+                    <p>Sistema de agendamento online</p>
+                </div>
+                <div class="card-arrow"><i class="ph ph-caret-right"></i></div>
+            </a>
+
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="fade-in delay-4">
+            <p>© 2025 EG Empório Digital.</p>
+        </footer>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
