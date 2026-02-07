@@ -6,6 +6,16 @@
     
     <title>EG Empório Digital</title>
     
+    <!-- SCRIPT DE CORREÇÃO AUTOMÁTICA (Funciona no PC e no Site ao mesmo tempo) -->
+    <script>
+        // Se NÃO estiver no computador (localhost), adiciona a base /bio/ para o Vercel achar as imagens
+        if (window.location.hostname !== '127.0.0.1' && window.location.hostname !== 'localhost') {
+            var base = document.createElement('base');
+            base.href = '/bio/';
+            document.head.appendChild(base);
+        }
+    </script>
+
     <!-- Ícone da Aba (Favicon) -->
     <link rel="shortcut icon" href="perfil-novo.jpg" type="image/jpeg">
 
