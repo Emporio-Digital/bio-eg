@@ -2,7 +2,6 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <!-- Removi a tag base para funcionar no seu computador -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>EG Empório Digital</title>
@@ -22,9 +21,12 @@
     <!-- Ícones -->
     <script src="https://unpkg.com/@phosphor-icons/web"></script>
 
+    <!-- Link do CSS Externo -->
     <link rel="stylesheet" href="style.css">
 
     <style>
+        /* ESTILOS INTERNOS (Mantidos idênticos ao original para correções específicas) */
+
         /* Correção para o fundo ficar 100% fixo (inclusive no celular) */
         body::before {
             content: "";
@@ -33,6 +35,7 @@
             left: 0;
             width: 100%;
             height: 100%;
+            /* Caminho direto, pois a imagem estará na mesma pasta que o HTML */
             background-image: url('fundo.jpg');
             background-size: cover;
             background-position: center;
@@ -95,8 +98,7 @@
             </div>
             
             <h1>EG Empório Digital</h1>
-            <!-- Removi a frase 'Link na Bio' conforme solicitado -->
-
+            
             <div class="social-icons-header">
                 <a href="https://wa.me/5511916053292?text=Ol%C3%A1!%20Vim%20pelo%20seu%20link%20da%20bio." target="_blank">
                     <i class="ph ph-whatsapp-logo"></i>
@@ -113,7 +115,7 @@
             
             <!-- CARD 1: SITE OFICIAL -->
             <a href="https://egemporiodigital.com.br/" class="card fade-in delay-1" target="_blank">
-                <!-- Adicionei a classe "mega" para aumentar o logo -->
+                <!-- Mantida a classe "mega" -->
                 <div class="card-icon-img mega">
                     <img src="logo-site.png" alt="Logo Site">
                 </div>
@@ -126,7 +128,7 @@
 
             <!-- CARD 2: JOIAS -->
             <a href="https://joias.egemporiodigital.com.br/" class="card fade-in delay-2" target="_blank">
-                <!-- Adicionei a classe "mega" para aumentar o logo -->
+                <!-- Mantida a classe "mega" -->
                 <div class="card-icon-img mega">
                     <img src="logo-joias.png" alt="Logo Joias">
                 </div>
@@ -139,7 +141,7 @@
 
             <!-- CARD 3: KAIRÓS -->
             <a href="https://kairos.egemporiodigital.com.br/" class="card fade-in delay-3" target="_blank">
-                <!-- Mantive a classe "mega" aqui também para padronizar o tamanho -->
+                <!-- Mantida a classe "mega" -->
                 <div class="card-icon-img mega">
                     <img src="logo-kairos.png" alt="Logo Kairós">
                 </div>
