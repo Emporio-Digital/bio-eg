@@ -88,6 +88,23 @@
         .card-arrow {
             color: #ffffff !important;
         }
+
+        /* CORREÇÃO DO LOGO HORIZON (Limitando o tamanho do ícone) */
+        .card-icon-img.mega {
+            width: 55px !important;
+            height: 55px !important;
+            display: flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            flex-shrink: 0 !important;
+        }
+
+        .card-icon-img.mega img {
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: contain !important;
+            border-radius: 10px; /* Suaviza as bordas do logo Horizon/Kairós */
+        }
     </style>
 </head>
 <body>
@@ -125,7 +142,6 @@
             
             <!-- CARD 1: SITE OFICIAL -->
             <a href="https://egemporiodigital.com.br/" class="card fade-in delay-1" target="_blank">
-                <!-- Mantida a classe "mega" -->
                 <div class="card-icon-img mega">
                     <img src="logo-site.png" alt="Logo Site">
                 </div>
@@ -138,7 +154,6 @@
 
             <!-- CARD 2: JOIAS -->
             <a href="https://joias.egemporiodigital.com.br/" class="card fade-in delay-2" target="_blank">
-                <!-- Mantida a classe "mega" -->
                 <div class="card-icon-img mega">
                     <img src="logo-joias.png" alt="Logo Joias">
                 </div>
@@ -151,7 +166,6 @@
 
             <!-- CARD 3: KAIRÓS -->
             <a href="https://kairos.egemporiodigital.com.br/" class="card fade-in delay-3" target="_blank">
-                <!-- Mantida a classe "mega" -->
                 <div class="card-icon-img mega">
                     <img src="logo-kairos.png" alt="Logo Kairós">
                 </div>
@@ -162,10 +176,22 @@
                 <div class="card-arrow"><i class="ph ph-caret-right"></i></div>
             </a>
 
+            <!-- CARD 4: HORIZON (NOVO) -->
+            <a href="https://horizon.egemporiodigital.com.br/" class="card fade-in delay-4" target="_blank">
+                <div class="card-icon-img mega">
+                    <img src="logo-horizon.png" alt="Logo Horizon">
+                </div>
+                <div class="card-content">
+                    <h3>Horizon</h3>
+                    <p>Sistema de Atendimento Automático</p>
+                </div>
+                <div class="card-arrow"><i class="ph ph-caret-right"></i></div>
+            </a>
+
         </section>
 
         <!-- FOOTER -->
-        <footer class="fade-in delay-4">
+        <footer class="fade-in delay-5">
             <p>© 2025 EG Empório Digital.</p>
         </footer>
 
